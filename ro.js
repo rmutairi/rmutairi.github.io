@@ -603,7 +603,7 @@ setupFBXClickHandler() {
     window.addEventListener('click', onClick);
 window.addEventListener('touchstart', onClick, { passive: false }); 
 
-
+}
 
 
 
@@ -870,6 +870,7 @@ window.addEventListener('touchstart', onClick, { passive: false });
 }
 
 export { Ro };
+
 
 
 

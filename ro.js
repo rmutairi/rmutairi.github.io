@@ -604,7 +604,7 @@ setupFBXClickHandler() {
 window.addEventListener('touchstart', onClick, { passive: false }); 
 
 
-}
+
 
 
 //pipe
@@ -870,6 +870,7 @@ window.addEventListener('touchstart', onClick, { passive: false });
 }
 
 export { Ro };
+
 
 
 

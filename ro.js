@@ -599,7 +599,10 @@ setupFBXClickHandler() {
 
     
 
-    window.addEventListener('touchstart', onClick);
+   
+    window.addEventListener('click', onClick);
+window.addEventListener('touchstart', onClick, { passive: false }); 
+
 
 
 
@@ -673,8 +676,9 @@ setupPipeClickHandler() {
             });
         }
     };
+window.addEventListener('click', onClick);
+window.addEventListener('touchstart', onClick, { passive: false }); 
 
-    window.addEventListener('touchstart', onClick);
 }
 
 
@@ -848,7 +852,9 @@ setupPressureTubeClickHandler() {
 
 
 
-    window.addEventListener('touchstart', onClick);
+   window.addEventListener('click', onClick);
+window.addEventListener('touchstart', onClick, { passive: false });
+
 }
 
 
@@ -864,6 +870,7 @@ setupPressureTubeClickHandler() {
 }
 
 export { Ro };
+
 
 
 

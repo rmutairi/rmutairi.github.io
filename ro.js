@@ -558,9 +558,20 @@ setupFBXClickHandler() {
     const onClick = (event) => {
         if (!this.vessel && !this.vesselTop) return;
 
-        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+             let clientX, clientY;
 
+    //  touch or mouse event
+    if (event.touches && event.touches.length > 0) {
+        clientX = event.touches[0].clientX;
+        clientY = event.touches[0].clientY;
+    } else {
+        clientX = event.clientX;
+        clientY = event.clientY;
+    }
+
+    
+    pointer.x = (clientX / window.innerWidth) * 2 - 1;
+    pointer.y = -(clientY / window.innerHeight) * 2 + 1;
         raycaster.setFromCamera(pointer, this.camera);
 
        
@@ -624,9 +635,22 @@ setupPipeClickHandler() {
     const onClick = (event) => {
         if (!this.pipe) return;
 
-        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+         let clientX, clientY;
 
+    //  touch or mouse event
+    if (event.touches && event.touches.length > 0) {
+        clientX = event.touches[0].clientX;
+        clientY = event.touches[0].clientY;
+    } else {
+        clientX = event.clientX;
+        clientY = event.clientY;
+    }
+
+    
+    pointer.x = (clientX / window.innerWidth) * 2 - 1;
+    pointer.y = -(clientY / window.innerHeight) * 2 + 1;
+
+     
         raycaster.setFromCamera(pointer, this.camera);
         const intersects = raycaster.intersectObject(this.pipe, true);
 
@@ -694,8 +718,20 @@ setupCentrifugalPumpsClickHandler() {
     const onClick = (event) => {
         if (!this.CentrifugalPump) return;
 
-        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+               let clientX, clientY;
+
+    //  touch or mouse event
+    if (event.touches && event.touches.length > 0) {
+        clientX = event.touches[0].clientX;
+        clientY = event.touches[0].clientY;
+    } else {
+        clientX = event.clientX;
+        clientY = event.clientY;
+    }
+
+    
+    pointer.x = (clientX / window.innerWidth) * 2 - 1;
+    pointer.y = -(clientY / window.innerHeight) * 2 + 1;
 
        
 
@@ -768,18 +804,20 @@ setupPressureTubeClickHandler() {
     const onClick = (event) => {
         if (!this.pressureTube) return;
 
-          if (event.touches && event.touches.length > 0) {
-        // Touch event
+               let clientX, clientY;
+
+    //  touch or mouse event
+    if (event.touches && event.touches.length > 0) {
         clientX = event.touches[0].clientX;
         clientY = event.touches[0].clientY;
     } else {
-        // Mouse event
         clientX = event.clientX;
         clientY = event.clientY;
     }
 
-        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    
+    pointer.x = (clientX / window.innerWidth) * 2 - 1;
+    pointer.y = -(clientY / window.innerHeight) * 2 + 1;
 
       
 
@@ -826,6 +864,7 @@ setupPressureTubeClickHandler() {
 }
 
 export { Ro };
+
 
 
 

@@ -35,7 +35,9 @@ class Ro {
 
         this.clock = new THREE.Clock();
         this.loadingBar = new LoadingBar();
-        this.assetsPath = 'factory';
+        this.assetsPath = './factory/';
+
+
         this.scene = new THREE.Scene();
         
 
@@ -248,7 +250,7 @@ this.scene.background = new THREE.Color(0x333333);
 async loadFBXObject() {
     try {
         const loader = new FBXLoader();
-        loader.setPath(`${this.assetsPath}factory/`);
+       loader.setPath(this.assetsPath);
 
         console.log('📦 Loading FBX objects...');
         this.loadingBar.visible = true;
@@ -326,7 +328,7 @@ async loadFBXObject() {
 async loadCentrifugalPumpsObject() {
     try {
         const loader = new FBXLoader();
-        loader.setPath(`${this.assetsPath}factory/`);
+        loader.setPath(this.assetsPath);
 
         console.log('📦 Loading pipe FBX...');
         this.loadingBar.visible = true;
@@ -391,7 +393,7 @@ async loadCentrifugalPumpsObject() {
 async loadPipeObject() {
     try {
         const loader = new FBXLoader();
-        loader.setPath(`${this.assetsPath}factory/`);
+       loader.setPath(this.assetsPath);
 
         console.log('📦 Loading pipe FBX...');
         this.loadingBar.visible = true;
@@ -454,7 +456,7 @@ async loadPipeObject() {
 async loadPressureTubeObject() {
     try {
         const loader = new FBXLoader();
-        loader.setPath(`${this.assetsPath}factory/`);
+        loader.setPath(this.assetsPath);
 
         console.log('📦 Loading pressure tube FBX...');
         this.loadingBar.visible = true;
@@ -814,4 +816,5 @@ setupPressureTubeClickHandler() {
 }
 
 export { Ro };
+
 

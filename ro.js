@@ -588,7 +588,7 @@ setupFBXClickHandler() {
 
     
 
-    window.addEventListener('click', onClick);}
+    window.addEventListener('touchstart', onClick);
 
 
 
@@ -650,7 +650,7 @@ setupPipeClickHandler() {
         }
     };
 
-    window.addEventListener('click', onClick);
+    window.addEventListener('touchstart', onClick);
 }
 
 
@@ -732,7 +732,7 @@ setupCentrifugalPumpsClickHandler() {
 
 
 
-    window.addEventListener('click', onClick);
+    window.addEventListener('touchstart', onClick);
 }
 
 
@@ -768,6 +768,16 @@ setupPressureTubeClickHandler() {
     const onClick = (event) => {
         if (!this.pressureTube) return;
 
+          if (event.touches && event.touches.length > 0) {
+        // Touch event
+        clientX = event.touches[0].clientX;
+        clientY = event.touches[0].clientY;
+    } else {
+        // Mouse event
+        clientX = event.clientX;
+        clientY = event.clientY;
+    }
+
         pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
         pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
@@ -800,7 +810,7 @@ setupPressureTubeClickHandler() {
 
 
 
-    window.addEventListener('click', onClick);
+    window.addEventListener('touchstart', onClick);
 }
 
 
@@ -816,5 +826,6 @@ setupPressureTubeClickHandler() {
 }
 
 export { Ro };
+
 
 

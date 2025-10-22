@@ -771,8 +771,8 @@ setupCentrifugalPumpsClickHandler() {
 
 
 
-
-    window.addEventListener('touchstart', onClick);
+window.addEventListener('click', onClick);
+window.addEventListener('touchstart', onClick, { passive: false }); 
 }
 
 
@@ -870,6 +870,7 @@ window.addEventListener('touchstart', onClick, { passive: false });
 }
 
 export { Ro };
+
 
 
 

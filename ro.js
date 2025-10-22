@@ -35,7 +35,7 @@ class Ro {
 
         this.clock = new THREE.Clock();
         this.loadingBar = new LoadingBar();
-        this.assetsPath = '../../assets/';
+        this.assetsPath = 'factory';
         this.scene = new THREE.Scene();
         
 
@@ -814,3 +814,4 @@ setupPressureTubeClickHandler() {
 }
 
 export { Ro };
+
